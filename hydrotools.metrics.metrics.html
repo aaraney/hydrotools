@@ -2,13 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="hydrotools.events.event_detection subpackage" href="hydrotools.events.event_detection.html" /><link rel="prev" title="hydrotools.metrics subpackage" href="hydrotools.metrics.html" />
 
-    <meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>hydrotools.metrics.metrics module - OWPHydroTools 2.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -208,7 +208,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -253,6 +254,8 @@
 <li><p>coefficient_of_extrapolation</p></li>
 </ul>
 </div></blockquote>
+</section>
+</section>
 <dl class="py function">
 <dt class="sig sig-object py" id="hydrotools.metrics.metrics.base_chance">
 <span class="sig-prename descclassname"><span class="pre">hydrotools.metrics.metrics.</span></span><span class="sig-name descname"><span class="pre">base_chance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contingency_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">true_positive_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'true_positive'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_positive_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'false_positive'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_negative_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'false_negative'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">true_negative_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'true_negative'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#hydrotools.metrics.metrics.base_chance" title="Permalink to this definition">#</a></dt>
@@ -295,8 +298,8 @@ score is 1.0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>y_true</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
-<li><p><strong>y_pred</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
+<li><p><strong>y_true</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
+<li><p><strong>y_pred</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
 <li><p><strong>log</strong> (<em>bool</em><em>, </em><em>default False</em>) – Apply numpy.log (natural logarithm) to y_true and y_pred
 before computing the NSE.</p></li>
 <li><p><strong>power</strong> (<em>float</em><em>, </em><em>default 2.0</em>) – Exponent for each mean error summation value.</p></li>
@@ -343,8 +346,8 @@ skill no better than assuming the last observation would persist. A perfect scor
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>y_true</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
-<li><p><strong>y_pred</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
+<li><p><strong>y_true</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
+<li><p><strong>y_pred</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
 <li><p><strong>lag</strong> (<em>int</em><em>, </em><em>default 1</em>) – Number of values by which to lag the baseline.</p></li>
 <li><p><strong>log</strong> (<em>bool</em><em>, </em><em>default False</em>) – Apply numpy.log (natural logarithm) to y_true and y_pred
 before computing the score.</p></li>
@@ -491,8 +494,8 @@ computing distance in a 3-dimensional Euclidean space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>y_true</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
-<li><p><strong>y_pred</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
+<li><p><strong>y_true</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
+<li><p><strong>y_pred</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
 <li><p><strong>r_scale</strong> (<em>float</em><em>, </em><em>optional</em><em>, </em><em>default 1.0</em>) – Linear correlation (r) scaling factor. Used to re-scale the Euclidean space by
 emphasizing different KGE components.</p></li>
 <li><p><strong>a_scale</strong> (<em>float</em><em>, </em><em>optional</em><em>, </em><em>default 1.0</em>) – Relative variability (alpha) scaling factor. Used to re-scale the Euclidean space by
@@ -613,8 +616,8 @@ observations. A score of 1.0 still indicates the model exactly matches the obser
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>y_true</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
-<li><p><strong>y_pred</strong> (<em>array-like of shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
+<li><p><strong>y_true</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Ground truth (correct) target values, also called observations, measurements, or observed values.</p></li>
+<li><p><strong>y_pred</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em><em>, </em><em>required</em>) – Estimated target values, also called simulations or modeled values.</p></li>
 <li><p><strong>log</strong> (<em>bool</em><em>, </em><em>default False</em>) – Apply numpy.log (natural logarithm) to y_true and y_pred
 before computing the NSE.</p></li>
 <li><p><strong>power</strong> (<em>float</em><em>, </em><em>default 2.0</em>) – Exponent for each mean error summation value.</p></li>
@@ -808,8 +811,6 @@ deeply negative values.</p>
 </dd></dl>
 
 </section>
-</section>
-</section>
 
         </article>
       </div>
@@ -823,10 +824,10 @@ deeply negative values.</p>
                 </div>
                 <div class="title">hydrotools.events.event_detection subpackage</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="hydrotools.metrics.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -862,7 +863,7 @@ deeply negative values.</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -873,6 +874,24 @@ deeply negative values.</p>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.base_chance"><code class="docutils literal notranslate"><span class="pre">base_chance()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.coefficient_of_extrapolation"><code class="docutils literal notranslate"><span class="pre">coefficient_of_extrapolation()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.coefficient_of_persistence"><code class="docutils literal notranslate"><span class="pre">coefficient_of_persistence()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.compute_contingency_table"><code class="docutils literal notranslate"><span class="pre">compute_contingency_table()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.equitable_threat_score"><code class="docutils literal notranslate"><span class="pre">equitable_threat_score()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.frequency_bias"><code class="docutils literal notranslate"><span class="pre">frequency_bias()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.kling_gupta_efficiency"><code class="docutils literal notranslate"><span class="pre">kling_gupta_efficiency()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.mean_error"><code class="docutils literal notranslate"><span class="pre">mean_error()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.mean_error_skill_score"><code class="docutils literal notranslate"><span class="pre">mean_error_skill_score()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.nash_sutcliffe_efficiency"><code class="docutils literal notranslate"><span class="pre">nash_sutcliffe_efficiency()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.percent_correct"><code class="docutils literal notranslate"><span class="pre">percent_correct()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.probability_of_detection"><code class="docutils literal notranslate"><span class="pre">probability_of_detection()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.probability_of_false_alarm"><code class="docutils literal notranslate"><span class="pre">probability_of_false_alarm()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.probability_of_false_detection"><code class="docutils literal notranslate"><span class="pre">probability_of_false_detection()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.root_mean_squared_error"><code class="docutils literal notranslate"><span class="pre">root_mean_squared_error()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.threat_score"><code class="docutils literal notranslate"><span class="pre">threat_score()</span></code></a></li>
+<li><a class="reference internal" href="#hydrotools.metrics.metrics.volumetric_efficiency"><code class="docutils literal notranslate"><span class="pre">volumetric_efficiency()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -889,6 +908,7 @@ deeply negative values.</p>
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
 </html>
