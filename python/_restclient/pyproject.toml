@@ -1,6 +1,62 @@
 [build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8", "wheel"]
+# requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
-requires = [
-  "setuptools>=42",
-  "wheel",
+
+[tool.setuptools_scm]
+version_file = "src/hydrotools/_restclient/_version.py"
+tag_regex = '^(?:hydrotools\._restclient\/)(?P<version>[vV]?\d+(?:\.\d+){0,2}[^\+]*)(?:\+.*)?$'
+root = '../../'
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+# TODO: see if you can do something like find_namespace
+# see: https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-namespace-packages
+# include = ["hydrotools._restclient"]
+
+[project]
+name = "hydrotools._restclient"
+# version = "3.1.0"
+dynamic = ["version"]
+authors = [{ name = "Austin Raney", email = "austin.raney@nooa.gov" }]
+description = "General REST api client with built in request caching and retries."
+readme = { file = "README.md", content-type = "text/markdown" }
+dependencies = [
+    "aiohttp",
+    "aiohttp_client_cache[sqlite]>=0.9.0",
+    "python-forge",
+    "aiosqlite",
+    "pandas",
 ]
+requires-python = ">=3.7"
+# TODO: see if it is possible to also include the name of the license
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: Free To Use But Restricted",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Scientific/Engineering :: Hydrology",
+    "Operating System :: OS Independent",
+]
+
+# TODO: figure out how to get this data
+# url = https://github.com/NOAA-OWP/hydrotools
+# license = USDOC
+# license_files =
+#     LICENSE
+
+[project.urls]
+Documentation = "https://noaa-owp.github.io/hydrotools/hydrotools._restclient.html"
+Homepage = "https://github.com/NOAA-OWP/hydrotools/tree/main/python/_restclient"
+Issues = "https://github.com/NOAA-OWP/hydrotools/issues"
+Repository = "https://github.com/NOAA-OWP/hydrotools/tree/main/python/_restclient"
+
+[project.optional-dependencies]
+develop = ["pytest", "pytest-aiohttp"]
